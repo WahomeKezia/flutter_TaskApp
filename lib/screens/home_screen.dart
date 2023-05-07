@@ -16,54 +16,49 @@ class _HomeScreenStateState extends State<HomeScreenState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.maxFinite,
-        height: double.maxFinite,
-        padding:const EdgeInsets.only(left: 20 , right: 20) ,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            RichText(
-              text: TextSpan(
-                text: "Hello",
-                style: TextStyle(
-                  fontSize: 60,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.mainColor
-                ),
-            children: [
-              TextSpan(
-                text: "\nstart your best day with us",
-                style: TextStyle(
-                  fontSize: 14,
-                
-                  color: AppColors.smallTextColor,
-                )
-              )
-            ]
-              )
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height/2.5,),
-
-            ButtonWidget(backgroundcolor: AppColors.mainColor, 
-            text: "Add task", 
-            textColor: Colors.white), 
-            SizedBox(height: 20,), 
-            ButtonWidget(backgroundcolor: Colors.white, 
-            text: "View all", 
-            textColor: AppColors.smallTextColor), 
-                
-        ]),
-        decoration:const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/welcome.jpg"),
-          fit: BoxFit.cover,
-        ),
-        
-      )
-
-    )
-    );
+        body: Container(
+            width: double.maxFinite,
+            height: double.maxFinite,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RichText(
+                      text: TextSpan(
+                          text: "Hello",
+                          style: TextStyle(
+                              fontSize: 60,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.mainColor),
+                          children: [
+                        TextSpan(
+                            text: "\nstart your best day with us",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.smallTextColor,
+                            ))
+                      ])),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 2.5,
+                  ),
+                  ButtonWidget(
+                      backgroundcolor: AppColors.mainColor,
+                      text: "Add task",
+                      textColor: Colors.white),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ButtonWidget(
+                      backgroundcolor: Colors.white,
+                      text: "View all",
+                      textColor: AppColors.smallTextColor),
+                ]),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/welcome.jpg"),
+                fit: BoxFit.cover,
+              ),
+            )));
   }
 }
