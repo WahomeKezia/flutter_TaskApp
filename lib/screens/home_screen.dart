@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_golang_yt/screens/add_task.dart';
+import 'package:flutter_golang_yt/screens/all_tasks.dart';
 import 'package:flutter_golang_yt/utils/app_colors.dart';
 import 'package:flutter_golang_yt/widgets/button_widget.dart';
+import 'package:get/get.dart';
 
 class HomeScreenState extends StatefulWidget {
   const HomeScreenState({Key? key}) : super(key: key);
@@ -34,7 +37,7 @@ class _HomeScreenStateState extends State<HomeScreenState> {
                 ),
             children: [
               TextSpan(
-                text: "\nstart your best day with us",
+                text: "\nThis is the best day to start your day ",
                 style: TextStyle(
                   fontSize: 14,
                 
@@ -45,16 +48,25 @@ class _HomeScreenStateState extends State<HomeScreenState> {
               )
             ),
             SizedBox(height: MediaQuery.of(context).size.height/2.5,),
-
-            ButtonWidget(backgroundcolor: AppColors.mainColor, 
+          InkWell(
+            onTap: (){
+              Get.to(()=>const AddTask(), transition: Transition.zoom , duration: const Duration(milliseconds: 500));
+            },
+            child: ButtonWidget(backgroundcolor: AppColors.mainColor, 
             text: "Add task", 
             textColor: Colors.white), 
-            SizedBox(height: 20,), 
+        ),
+            const SizedBox(height: 20,), 
+            InkWell(
+              onTap: (){
+                Get.to(()=>const AllTasks(), transition: Transition.fade , duration: const Duration(seconds:1));
+              },
+              child:
             ButtonWidget(backgroundcolor: Colors.white, 
             text: "View all", 
             textColor: AppColors.smallTextColor), 
-                
-        ]),
+            )  
+        ],),
         decoration:const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/welcome.jpg"),
