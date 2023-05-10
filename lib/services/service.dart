@@ -19,7 +19,7 @@ class DataService extends GetConnect implements GetxService {
 
     Future<Response> postData(dynamic body) async {
     Response response = await post(
-      'http://localhost:8080/gettasks',
+      'http://localhost:8080/',
       body,
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
